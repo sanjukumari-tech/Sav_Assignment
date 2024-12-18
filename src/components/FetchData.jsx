@@ -1,5 +1,5 @@
 import { Suspense, lazy, useState, useEffect } from 'react';
-
+import "../style/FetchData.css";
 const LeftMenu = lazy(() => import('./LeftMenu'));
 const Products = lazy(() => import('./Products'));
 
@@ -31,13 +31,13 @@ const FetchData = () => {
   
 
   return (
-    <div style={{ display: "flex", height: "100vh", width: "100%", }}>
-      <div style={{ height: "auto", width: "30%", padding: "10px", marginRight:"30px" }}>
+    <div  className='fetch-container'>
+      <div className='fetch-left'>
         <Suspense fallback={<div>Loading LeftMenu...</div>}>
           <LeftMenu products={products} onFilterChange={handleFilteredValueChange} onClearFilters={handleClearFilters} /> {/**left component for filter **/}
         </Suspense>
       </div>
-      <div style={{ height: "100vh", width: "70%", padding: "10px" }}>
+      <div className='fetch-product'>
         <Suspense fallback={<div>Loading Products...</div>}>
           <Products products={filteredValue.length ? filteredValue:products }/>
         </Suspense>
