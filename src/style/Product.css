@@ -1,0 +1,117 @@
+/* Products.css */
+
+/* Container for the search input and button */
+.search-container {
+    margin: 10px 0;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search-input {
+    padding: 5px;
+    width: 200px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+  }
+ 
+  .search-button {
+    padding: 6px 12px;
+    border: none;
+    background-color: orange;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  } 
+  
+  .search-button:hover {
+    background-color: darkorange;
+  }
+  
+  /* Grid container for the products */
+  .products-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 10px;
+  }
+  
+  /* Style for individual product card */
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgray;
+    margin: 2px;
+    padding: 15px;
+    font-style: italic;
+    font-size: 15px;
+    text-align: center;
+  }
+  
+  .product-card img {
+    max-width: 200px;
+    height: 200px;
+  }
+  
+  .product-card h4 {
+    margin: 5px 0;
+  }
+  
+  /* Style for action buttons */
+  .button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .button-group button {
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .buy-now-button {
+    border: 1px solid orange;
+    background-color: orange;
+    color: white;
+  }
+  
+  .buy-now-button:hover {
+    background-color: darkorange;
+  }
+  
+  .add-to-cart-button {
+    border: 1px solid orange;
+    background-color: white;
+    color: orange;
+  }
+  
+  .add-to-cart-button:hover {
+    background-color: lightgray;
+  }
+  
+  /* Media Queries for responsiveness */
+  @media (max-width: 768px) {
+    .products-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .products-container {
+      grid-template-columns: 1fr; /* 1 column on small screens */
+    }
+  
+    .search-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .search-input {
+      width: 100%;
+    }
+  }
+  
