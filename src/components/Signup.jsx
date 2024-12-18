@@ -7,6 +7,7 @@ export default function Signup() {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [isVerified, setIsVerified] = useState(false);
   const navigate = useNavigate();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
@@ -25,6 +26,7 @@ export default function Signup() {
     // console.log("taking you to product page")
     navigate("/products")
   }
+  const isFormValid = formData.email.trim() !== '' && formData.password.trim() !== '';
 
   return (
     <div className="signup-container">
@@ -66,7 +68,7 @@ export default function Signup() {
           <button
             type="submit"
             className="submit-button"
-            disabled={!isVerified} // Disable button until reCAPTCHA is verified
+            disabled={!isVerified || !isFormValid} // Disable button until reCAPTCHA is verified
             onClick={handleTriggerProductPage}
           >
             Sign Up
