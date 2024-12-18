@@ -1,7 +1,7 @@
 # React + Vite
-ment Application
+SAV.COM ASSIGNMENT
 
-Description
+*** Description***
 
 The Products Management Application is a React-based web application that provides functionality to:
 
@@ -89,7 +89,7 @@ Start the development server:
 
 npm start
 
-The app will be available at http://localhost:3000.
+The app will be available at https://sav-assignment-lilac.vercel.app/
 
 Usage Instructions
 
@@ -109,18 +109,4 @@ Steps to Contribute:
 
 Fork the repository.
 
-Create a new branch for your feature or bug fix:
 
-git checkout -b feature-name
-
-Commit your changes:
-
-git commit -m "Description of your changes"
-
-Push to the branch:
-
-git push origin feature-name
-
-Open a pull request on GitHub.
-
-License
