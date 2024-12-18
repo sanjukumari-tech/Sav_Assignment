@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-
-const LeftMenu = ({ products }) => {
+import React, { useEffect, useState } from 'react';
+import "../style/LeftComponent.css";
+const LeftMenu = ({ products, onFilterChange }) => {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [selectedPrices, setSelectedPrices] = useState([]);
   const [selectedRatings, setSelectedRatings] = useState([]);
@@ -13,6 +13,7 @@ const LeftMenu = ({ products }) => {
     setSelectedCategories(prev =>
       prev.includes(category) ? prev.filter(c => c !== category) : [...prev, category]
     );
+   
   };
 
   const handlePriceChange = (price) => {
@@ -40,12 +41,22 @@ const LeftMenu = ({ products }) => {
     );
   });
 
+  useEffect(() => {
+      if(selectedCategories.length || selectedPrices.length || selectedRatings.length){
+        onFilterChange(filteredProducts)
+      }
+      else {
+        onFilterChange(products)
+      }
+  },[selectedCategories, selectedPrices, selectedRatings])
+
   return (
-    <div style={{scrollbarWidth:"auto"}}>
-      <h3>All categories</h3>
+    <div className='left-sidebar' style={{scrollbarWidth:"auto", display:'flex', position:'fixed'}}>
+      <div>
+      <h3 className='heading-font'>All categories</h3>
       {categories.map((category, index) => (
         <div key={index}>
-          <input
+          <input   className='left-spacing'
             type="checkbox"
             value={category}
             onChange={() => handleCategoryChange(category)}
@@ -53,25 +64,29 @@ const LeftMenu = ({ products }) => {
           {category}
         </div>
       ))}
-
+      </div>
+                 
       <hr />
-      <h3>Price</h3>
+     <div>
+     <h3 className='heading-font'>Price</h3>
       {prices.map((price, index) => (
         <div key={index}>
-          <input
+          <input   className='left-spacing'
             type="checkbox"
             value={price}
             onChange={() => handlePriceChange(price)}
           />
-          {price}
+          {price.split('-').join("$ - ")}$
         </div>
       ))}
 
+     </div>
       <hr />
-      <h3>Ratings</h3>
+      <div>
+      <h3  className='heading-font'>Ratings</h3>
       {ratings.map((rating, index) => (
         <div key={index}>
-          <input
+          <input className='left-spacing'
             type="checkbox"
             value={rating}
             onChange={() => handleRatingChange(rating)}
@@ -79,6 +94,7 @@ const LeftMenu = ({ products }) => {
           {'★'.repeat(rating)}
         </div>
       ))}
+      </div>
 
       <hr />
       <br />
@@ -86,10 +102,10 @@ const LeftMenu = ({ products }) => {
         setSelectedCategories([]);
         setSelectedPrices([]);
         setSelectedRatings([]);
-      }}>clear filter</button>
+      }}  className='button-clear'>clear filter</button>
 
-      <div >
-        <h3>Filtered Products</h3>
+      {/* <div >
+        <h3 >Filtered Products</h3>
 
         {filteredProducts.map(product => (
           <div key={product.id}>
@@ -103,9 +119,9 @@ const LeftMenu = ({ products }) => {
             </div>
           </div>
         )).slice(0,2)}
-        </div>
-   
-    </div>
+        </div> */}
+      
+    </div> 
   );
 };
 

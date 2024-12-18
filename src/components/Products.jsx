@@ -3,9 +3,11 @@ import "../style/Product.css"; // Import the CSS file
 
 
 const Products = ({ products }) => {
+  console.log('products',products)
   const [searchTerm, setSearchTerm] = useState("");
   const [currentSelectedProducts, setCurrentSelectedProducts] = useState(products);//for drag and drop selection of current product
   const [currentPage, setCurrentPage] = useState(1); // current state for page for pagination
+  const [loading, setLoading] = useState(true);
   const itemsPerPage = 10; // Number of items to display per page
 
   
@@ -67,9 +69,24 @@ const Products = ({ products }) => {
     e.preventDefault(); // allow dropping of product
   };
 
-  useEffect(()=> {
-    setCurrentSelectedProducts(products)
-  },[products])
+  useEffect(() => {
+    // Simulate data loading delay
+    setLoading(true);
+    setTimeout(() => {
+      setCurrentSelectedProducts(products);
+      setLoading(false);
+    }, 1000); // Adjust delay as needed
+  }, [products]);
+
+
+  if (loading) {
+    return (
+      <div className="loading-container">
+        <div className="spinner"></div>
+        <p>Loading products...</p>
+      </div>
+    );
+  }
 
   return (
     <div>
