@@ -2,7 +2,7 @@
     display: flex;
     height:100vh ;
     width: 100%;
-    overflow: hidden; 
+   
    
 
 }
@@ -26,10 +26,10 @@
    .fetch-product{
        height: 100vh;
        width: 70%;
-       padding:10px ;
+       padding:20px ;
        /* margin-right: 30px; */
         margin-left: 30%;
-        overflow-y: auto;
+        /* overflow-y: auto; */
    }
    
    /* style={{ height: "100vh", width: "70%", padding: "10px" }} */
@@ -42,12 +42,13 @@
     }
 
     .fetch-left{
-        display: none;
+        visibility: none;
     }
        .fetch-product{
         margin-left: 0;
         width: 100%;
         padding: 10px;
+       
     }   
 
       
@@ -59,5 +60,8 @@
     .fetch-product{
         width: 60%;
         margin-left: 40%;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
     }
 }

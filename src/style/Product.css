@@ -35,7 +35,14 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 10px;
+    overflow: auto; 
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
+
+  .products-container::-webkit-scrollbar {
+    display: none;
+  } 
   
   /* Style for individual product card */
   .product-card {
