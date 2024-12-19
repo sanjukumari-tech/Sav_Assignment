@@ -5,34 +5,28 @@ SAV.COM ASSIGNMENT
 
 The Products Management Application is a React-based web application that provides functionality to:
 
-Search for products by title.
 
-View products with pagination.
-
-Drag and drop products to reorder them.
-
-Interact with product cards (e.g., "Buy Now" and "Add to Cart" buttons).
 
 The project demonstrates core React concepts and provides an intuitive user interface styled with CSS.
 
-Features
+## Features
 
-Search Functionality: Real-time search to filter products by title.
+# Search Functionality: Real-time search to filter products by title.
 
-Pagination: Navigate through product pages using "Previous," "Next," and page numbers.
+# Pagination: Navigate through product pages using "Previous," "Next," and page numbers.
 
-Drag-and-Drop: Rearrange product positions interactively.
+# Drag-and-Drop: Rearrange product positions interactively.
 
-Interactive Product Cards: Display product details such as title, category, price, and an image.
+# Interactive Product Cards: Display product details such as title, category, price, and an image.
 
-Technology Stack
+# Technology Stack
 
-Frontend: React, CSS
+# Frontend: React, CSS,chakraUI
 
-State Management: React Hooks (useState, useEffect)
+# State Management: React Hooks (useState, useEffect)
 
 
-Project Structure
+# Project Structure
 
 src/
 |-- components/
@@ -59,35 +53,19 @@ Here is a preview of the UI:
 
 
 
-Getting Started
 
-Prerequisites
 
-Ensure you have the following installed:
-
-Node.js (v14+)
-
-npm or yarn
-
-Installation
-
-Clone the repository:
-
-git clone https://github.com/your-username/products-management-app.git
-
-Navigate to the project folder:
-
-cd products-management-app
+Installatio
 
 Install the dependencies:
 
 npm install
 
-Running the Application
+# Running the Application
 
-Start the development server:
+# Start the development server:
 
-npm start
+npm run start
 
 The app will be available at https://sav-assignment-lilac.vercel.app/
 
