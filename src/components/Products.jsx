@@ -128,7 +128,7 @@ const Products = ({ products }) => {
         </div>
       </div>
 
-      {/* Pagination Controls */}
+      {/* Pagination  */}
       <div  className="pagination" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
         <button style={{border:"1px solid gray",BackgroundColor:"pink",gap:"3px",borderRadius:"5px",padding:"5px", margin:"0px 5px 5px 5px",cursor:"pointer"}}  onClick={goToPreviousPage}>
           Previous

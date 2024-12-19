@@ -2,39 +2,62 @@
     display: flex;
     height:100vh ;
     width: 100%;
+    overflow: hidden; 
+   
 
 }
 
+/* display: "flex", height: "100vh", width: "100%",  */
+
+
+.fetch-left{
+    
+    height: 100vh;
+    width: 30%;
+    padding:10px ;
+    margin-right: 30px;
+    position: fixed;
+    top:0;
+    left:0;
+    overflow: hidden;
+   }
+   /* style={{ height: "auto", width: "30%", padding: "10px", marginRight:"30px" }} */
+   
+   .fetch-product{
+       height: 100vh;
+       width: 70%;
+       padding:10px ;
+       /* margin-right: 30px; */
+        margin-left: 30%;
+        overflow-y: auto;
+   }
+   
+   /* style={{ height: "100vh", width: "70%", padding: "10px" }} */
+
 @media( max-width:454px) {
     .fetch-container{
-        display: grid;
-        grid-template-columns: repeat(1,1fr);
-        height:90vh ;
-        width: 60%;
+      display: flex;
+      flex-direction: column;
     
     }
 
     .fetch-left{
         display: none;
-       }
+    }
+       .fetch-product{
+        margin-left: 0;
+        width: 100%;
+        padding: 10px;
+    }   
 
       
 }
-/* display: "flex", height: "100vh", width: "100%",  */
-
-
-.fetch-left{
- height: auto;
- width: 30%;
- padding:10px ;
- margin-right: 30px;
+@media (max-width:768px) {
+    .fetch-left{
+        width: 40%;
+    }
+    .fetch-product{
+        width: 60%;
+        margin-left: 40%;
+    }
 }
-/* style={{ height: "auto", width: "30%", padding: "10px", marginRight:"30px" }} */
-
-.fetch-product{
-    height: 100vh;
-    width: 70%;
-    padding:10px ;
-    margin-right: 30px;
-}
-/* style={{ height: "100vh", width: "70%", padding: "10px" }} */

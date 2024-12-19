@@ -1,6 +1,6 @@
 /* Products.css */
 
-/* Container for the search input and button */
+
 .search-container {
     margin: 10px 0;
     display: flex;
@@ -93,7 +93,7 @@
     background-color: lightgray;
   }
   
-  /* Media Queries for responsiveness */
+  
   @media (max-width: 768px) {
     .products-container {
       grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
